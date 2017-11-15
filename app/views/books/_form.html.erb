@@ -1,0 +1,7 @@
+<%= render "layouts/errors", :object => @book %>
+
+<%= form_for @book do |f| %>
+  <%= f.label :genre %>
+  <%= f.text_field :genre %>
+  <%= f.submit %>
+<% end %>
