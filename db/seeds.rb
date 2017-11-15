@@ -10,4 +10,28 @@ Book.destroy_all
   Book.create!(genre: Faker::Book.genre)
 
 end
-p "Created #{Book.count} genre"                        
+p "Created #{Book.count} genre"
+
+
+
+Category.destroy_all
+
+10.times do |index|
+  Category.create!(name: Faker::Overwatch.hero)
+
+end
+
+p "Created #{Category.count} categories"
+
+
+
+Title.destroy_all
+
+10.times do |index|
+  Title.create!(name: Faker::Book.title,
+                author: Faker::Book.author,
+                image: Faker::LoremPixel.image)
+
+end
+
+p "Created #{Title.count} titles"
