@@ -1,0 +1,26 @@
+<h1><%= @category.name %></h1>
+
+<% if @category.titles.any? %>
+  <h4>Here are the titles for this category:</h4>
+
+  <ul>
+    <% @category.titles.each do |title| %>
+      <li>
+        <%= link_to title.name, category_title_path(@category) %> |
+        <%= link_to "Edit", edit_category_title_path(@category, title) %> |
+        <%= link_to "Delete", category_title_path(@category, title),
+                                 :data => {:confirm => "Are you sure?",
+                                                :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no titles yet!</p>
+<% end %>
+
+<p><%= link_to "Add a title", new_category_title_path(@category) %></p>
+<p><%= link_to "Delete List", category_path(@category),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
+
+<p><%= link_to "Return to categories", book_path(@category.book) %></p>

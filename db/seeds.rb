@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Book.destroy_all
+Category.destroy_all
+
 10.times do |index|
   Book.create!(genre: Faker::Book.genre)
 
@@ -14,10 +16,10 @@ p "Created #{Book.count} genre"
 
 
 
-Category.destroy_all
 
 10.times do |index|
-  Category.create!(name: Faker::Overwatch.hero)
+  Category.create!(name: Faker::Overwatch.hero,
+                  book_id: Book.last.id)
 
 end
 
@@ -26,7 +28,6 @@ p "Created #{Category.count} categories"
 
 
 Title.destroy_all
-
 10.times do |index|
   Title.create!(name: Faker::Book.title,
                 author: Faker::Book.author,

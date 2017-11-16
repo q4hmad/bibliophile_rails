@@ -1,13 +1,26 @@
 <h1><%= @book.genre %></h1>
 
+<% if @book.categories.any? %>
+  <h4>Here are the categories for this book:</h4>
 
+  <ul>
+    <% @book.categories.each do |category| %>
+      <li>
+        <%= link_to category.name, category_path(category) %> |
+        <%= link_to "Edit", edit_book_category_path(@book, category) %> |
+        <%= link_to "Delete", book_category_path(@book, category),
+                                 :data => {:confirm => "Are you sure?",
+                                                :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no categories yet!</p>
+<% end %>
 
-
-<p><%= link_to "Edit", edit_book_path(@book) %></p>
-<p><%= link_to "Delete", book_path(@book),
-                         :data => {:confirm => "You sure?",
-                                   :method => "delete"} %></p>
-
-
+<p><%= link_to "Add a category", new_book_category_path(@book) %></p>
+<p><%= link_to "Delete List", book_path(@book),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
 
 <p><%= link_to "Return to books", books_path %></p>
