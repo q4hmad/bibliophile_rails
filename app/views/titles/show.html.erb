@@ -1,3 +1,6 @@
+<div class="container">
+  <div class="row">
+
 <h1><%= @title.category.name %></h1>
 <h1><%= @title.author %></h1>
 <h1><%= image_tag @title.image %></h1>
@@ -7,3 +10,6 @@
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
 <p><%= link_to "Return to category", category_path(@title.category) %></p>
+
+ </div>
+</div>

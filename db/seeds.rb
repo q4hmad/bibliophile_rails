@@ -32,7 +32,7 @@ p "Created #{Category.count} categories"
 100.times do |index|
   Title.create!(name: Faker::Book.title,
                 author: Faker::Book.author,
-                image: Faker::LoremPixel.image("600x1000", false, 'cats'),
+                image: Faker::LoremPixel.image("600x800", false, 'cats'),
                 category_id: Faker::Number.between(Category.first.id, Category.last.id))
 
 end
