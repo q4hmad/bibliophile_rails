@@ -2,7 +2,7 @@
 <h3>Search by Genre:</h3>
 
 <ul>
-  <% @books.each do |book| %>
+  <% @booksX.each do |book| %>
     <li><%= link_to book.genre, book_path(book) %></li>
   <% end %>
 </ul>

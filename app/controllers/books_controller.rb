@@ -1,12 +1,12 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    @booksX = Book.ordered_by_genre
   end
 
   def show
     @book = Book.find(params[:id])
-  end
 
+  end
   def new
     @book = Book.new
   end

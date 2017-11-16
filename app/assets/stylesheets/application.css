@@ -42,7 +42,7 @@ li {
 
 
 body {
- background-image: url("https://images.unsplash.com/photo-1445311429009-0b7e0cff714a?auto=format&fit=crop&w=2167&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D");
+ background: url("https://images.unsplash.com/photo-1445311429009-0b7e0cff714a?auto=format&fit=crop&w=2167&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D") no-repeat;
  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
