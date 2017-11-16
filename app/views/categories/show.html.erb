@@ -6,7 +6,7 @@
   <ul>
     <% @category.titles.each do |title| %>
       <li>
-        <%= link_to title.name, category_title_path(@category) %> |
+        <%= link_to title.name, category_title_path(@category, title) %> |
         <%= link_to "Edit", edit_category_title_path(@category, title) %> |
         <%= link_to "Delete", category_title_path(@category, title),
                                  :data => {:confirm => "Are you sure?",
