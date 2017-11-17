@@ -4,10 +4,12 @@ class CategoriesController < ApplicationController
     @book = Book.find(params[:book_id])
     @categories = @book.category.all
 
+
   end
 
   def show
     @category = Category.find(params[:id])
+    @categories_with_most_titles = Category.most_titles
   end
 
   def new

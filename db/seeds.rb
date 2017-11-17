@@ -29,7 +29,7 @@ p "Created #{Category.count} categories"
 
 
 
-100.times do |index|
+250.times do |index|
   Title.create!(name: Faker::Book.title,
                 author: Faker::Book.author,
                 image: Faker::LoremPixel.image("600x800", false, 'cats'),
